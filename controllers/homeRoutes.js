@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     });
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render("login", {
       blogs,
       logged_in: req.session.logged_in,
     });
@@ -36,7 +36,7 @@ router.get("/blog/:id", async (req, res) => {
 
     const blog = projectData.get({ plain: true });
 
-    res.render("blog", {
+    res.render("homepage", {
       ...blog,
       logged_in: req.session.logged_in,
     });
