@@ -1,5 +1,5 @@
 <div>Home Page</div>
 {{#each projects as |blog| }}
-<div>{{blog.name}}</div>
+<div><a href="/blog/{{blog.id}}">{{blog.name}}</a></div>
 <div>{{blog.description}}</div>
 {{/each}}
