@@ -1,0 +1,60 @@
+body {
+  background-color: rgb(177, 220, 165);
+}
+
+.mainnav {
+  background-color: rgb(55, 5, 5);
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  background-color: rgb(177, 220, 165);
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  font-size: 33px;
+}
+.truenav {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+}
+.cool {
+  font-size: 20px;
+  color: azure;
+}
+.thetitle{
+    margin: 60px, 60px, 0px, 60px;
+    background-color:rgb(55, 5, 5) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.part{
+    color:azure ;
+    margin: 20px;
+
+}
+.user{
+    color: azure;
+    margin: 20px;
+}
+.box{
+   border: solid;
+   height: 100px;
+}
+.mainblock{
+    margin: 60px;
+}
+.form {
+    display: flex;
+    margin: 40px;
+}
+label{
+    margin: 20px;
+
+}
+.form-group{
+    display: flex;
+}
+

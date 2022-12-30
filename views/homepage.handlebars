@@ -1,15 +1,14 @@
-<div>Home Page</div>
+
 
 {{#each projects as |blog| }}
-<div>{{user.name}}</div>
-<div><a href="/blog/{{blog.id}}">{{blog.name}}</a></div>
-<div>{{blog.description}}</div>
-
-
+<div class="mainblock">
+<div class="thetitle">
+<h2><a class="part" href="/blog/{{blog.id}}">{{blog.name}}</a></h2>
+<div class="user">{{user.name}}</div>
+</div>
+<div class="box">{{blog.description}}</div>
+</div>
 {{#each comments as |comment|}}
 <div>{{comment.content}}</div>
- 
 {{/each}}
-
-
 {{/each}}
