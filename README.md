@@ -34,4 +34,4 @@ https://github.com/Jacobschoenbauer/blogging-mvc
 
 ![img](views/pics/bloglogin.png) 
 ## URL
-https://tech-bloogg.herokuapp.com/
+https://working-blog.herokuapp.com/
