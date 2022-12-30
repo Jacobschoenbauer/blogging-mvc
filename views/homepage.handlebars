@@ -1,16 +1,15 @@
 <div>Home Page</div>
+
 {{#each projects as |blog| }}
+<div>{{user.name}}</div>
 <div><a href="/blog/{{blog.id}}">{{blog.name}}</a></div>
 <div>{{blog.description}}</div>
 
 
- {{!-- <div class="blog-delete">
-        <button data-id="{{blog.id}}">DELETE</button>
-     
-    </div> --}}
-
-
+{{#each comments as |comment|}}
+<div>{{comment.content}}</div>
+ 
 {{/each}}
 
 
-{{!-- <script src="./js/delete.js"></script> --}}
+{{/each}}
