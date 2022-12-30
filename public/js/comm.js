@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/blogger");
+      document.location.replace("/blog/id");
     } else {
       alert("Failed to create comm");
     }
