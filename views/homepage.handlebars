@@ -1,6 +1,6 @@
 
 
-{{#each projects as |blog| }}
+{{#each blog as |blog| }}
 <div class="mainblock">
 <div class="thetitle">
 <h2><a class="part" href="/blog/{{blog.id}}">{{blog.name}}</a></h2>
@@ -8,8 +8,7 @@
 </div>
 <div class="box">{{blog.description}}</div>
 </div>
-{{#each comments as |comment|}}
-<div>{{comment.name}}</div>
+{{#each comm as |comment|}}
 <div>{{comment.content}}</div>
 {{/each}}
 {{/each}}

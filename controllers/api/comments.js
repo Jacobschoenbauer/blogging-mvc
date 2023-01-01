@@ -1,58 +1,39 @@
 const router = require("express").Router();
-const { Comment, User } = require("../../models");
+const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/blogger", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
-    const commentData = await Comment.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["name", "id"],
-        },
-      ],
-    });
-    res.status(200).json(commentData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.post("/blogger", withAuth, async (req, res) => {
-  try {
-    const newComment = await Comment.create({
-      content: req.body.content,
-      blog_id: req.body.blog_id,
-      user_id: req.session.userId,
+    console.log(req.body);
+    const newComm = await Comment.create({
+      ...req.body,
+      content: req.session.content,
     });
 
-    res.status(200).json(newComment);
+    res.status(200).json(newComm);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const commentData = await Comment.update(req.body, {
+    const commData = await Comment.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.userId,
+        user_id: req.session.user_id,
       },
     });
 
-    if (!commentData) {
-      res.status(404).json({ message: "No comment" });
+    if (!commData) {
+      res.status(404).json({ message: "No comment found with this id!" });
       return;
     }
 
-    res.status(200).json(commentData);
+    res.status(200).json(commData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
