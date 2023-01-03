@@ -7,11 +7,12 @@ router.post("/", withAuth, async (req, res) => {
     console.log(req.body);
     const newComm = await Comment.create({
       ...req.body,
-      com_name: req.session.com_name,
+      // com_name: req.session.com_name,
     });
 
     res.status(200).json(newComm);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
@@ -21,7 +22,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     const commData = await Comment.destroy({
       where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       },
     });
 

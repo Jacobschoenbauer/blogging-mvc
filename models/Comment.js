@@ -11,20 +11,20 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-   com_name: {
+    com_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     content: {
       type: DataTypes.STRING,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
     // blog_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
