@@ -9,12 +9,12 @@ router.get("/", async (req, res) => {
     const blogData = await Blog.findAll({
       include: [
         {
-          // model: User,
-          // attributes: ["name"],
-
-          model:User ,
-          include:[Comment],
+          model: User,
           attributes: ["name"],
+
+          // model:User,
+          // include:[Comment],
+          // attributes: ["name"],
         },
       ],
     });
@@ -30,27 +30,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const commData = await Comment.findAll({
-//       include: [
-//         {
-//           model: Comment,
-//           attributes: ["id"],
-//         },
-//       ],
-//     });
-
-//     const comm = commData.map((project) => project.get({ plain: true }));
-
-//     res.render("homepage", {
-//       comm,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get("/dashboard", async (req, res) => {
   try {
