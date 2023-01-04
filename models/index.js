@@ -6,7 +6,7 @@ User.hasMany(Blog, {
   foreignkey: "user_id",
   onDelete: "CASCADE",
 });
-
+//links all models for foreign key
 Blog.belongsTo(User, {
   foreignKey: "user_id",
 });

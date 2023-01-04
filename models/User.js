@@ -1,3 +1,5 @@
+
+//setups up table info for database
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');

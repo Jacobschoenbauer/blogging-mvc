@@ -1,3 +1,4 @@
+//setups up table info for database
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

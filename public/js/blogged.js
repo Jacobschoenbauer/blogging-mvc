@@ -1,6 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
+//javascript for the blogs
   const name = document.querySelector("#blog-name").value.trim();
   const description = document.querySelector("#blog-desc").value.trim();
 

@@ -2,7 +2,7 @@ const newFormHandler = async (event) => {
   event.preventDefault();
   const com_name = document.querySelector("#comm-name").value.trim();
   const content = document.querySelector("#comm-desc").value.trim();
-
+//javascript for the comments
   if (com_name && content) {
     const response = await fetch("/api/comm", {
       method: "POST",

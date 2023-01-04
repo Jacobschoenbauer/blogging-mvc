@@ -1,3 +1,5 @@
+
+//sets up all routes for web page
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
